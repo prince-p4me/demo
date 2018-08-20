@@ -1,0 +1,130 @@
+.tab-button:hover:not(.disable-hover), 
+.tab-button[aria-selected=true] {
+  color: #91c322 !important;
+  border-top: 1px solid #91c322 !important;
+}
+.tab-button[aria-selected=true] .tab-button-icon
+{
+  color: #91c322 !important;
+}
+ion-slides {
+  display: block;
+  width: 100%;
+  height: 265px;
+}
+.slide-zoom, .swiper-slide img {
+    width: 100%;
+    height: 265px;
+    filter: brightness(.7);
+}
+.swiper-pagination-bullet-active {
+    background: white;
+}
+.swiper-pagination{
+	text-align: left;
+}
+.swiper-pagination-fraction, 
+.swiper-pagination-custom, 
+.swiper-container-horizontal > .swiper-pagination-bullets {
+    left: 5%;
+}
+.slider-content{
+	position: absolute;
+	top: 0;
+	left: 5%;
+	z-index: 11;
+	/*background: red;*/
+	width: 100%;
+}
+ion-col .button[icon-only] {
+      padding: 10px;
+    min-width: 0.9em;
+    height: 60px;
+}
+.slider-content h1,.slider-content h2{
+	color: white
+}
+.slider-content h1{
+	font-size: 32px;
+}
+.slider-content h2{
+	font-size: 26px;
+}
+div.scroller-item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 90px;
+    cursor: pointer;
+}
+.scroller{
+	  background: #91c322;
+    padding: 0;
+    margin: 0;
+}
+.scroller button{
+	/*background: green;*/
+	color: grey
+
+}
+.scroller ion-label,.scroller button{
+	margin:0 !important;
+	font-weight: 300;
+	text-transform: none;
+}
+.scroller button.active{
+	border-top:4px solid white;
+	color: white;
+	position: relative;
+}
+.scroller button.active:after{
+	content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  position: absolute;
+  bottom: 0px;
+  left: 43%;
+}
+.thumbnail{
+	border-bottom: 1px solid #dedede;
+}
+.thumbnail .item-inner{
+	border: none !important;
+}
+.thumbnail .item-inner ion-label{
+	margin: 8px 8px 13px 0;
+}
+.thumbnail .item-inner ion-label h2{
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+.thumbnail .item-inner ion-label p{
+	color: #898080;
+	font-size:13px;
+}
+ion-thumbnail ion-img,
+ion-thumbnail img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 10px;
+}
+.spinner-crescent circle {
+    fill: transparent;
+    stroke-width: 10px;
+    stroke-dasharray: 260px;
+    stroke-dashoffset: 150px;
+}
+.spinner-md-crescent circle {
+    stroke: #91c322;
+}
+.badge-md-danger {
+    color: #fff;
+    background-color: #f53d3d;
+    border-radius: 50%;
+}
+.button-clear-md-secondary:hover:not(.disable-hover) {
+    color: white;
+}

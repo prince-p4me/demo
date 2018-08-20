@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar [hidden]="true" *navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="position: relative;">
+    <ion-slides pager autoplay="3000" loop="true">
+      <ion-slide *ngFor="let item of slides">
+        <img src={{item.path}}>
+      </ion-slide>
+    </ion-slides>
+    <div class="slider-content">
+      <br/>
+      <h1>Food<span style="color:#91c322">Mall</span></h1>
+      <br/><br/><br/>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-9 no-padding>
+            <h2 no-margin>Hey Samantha,</h2>
+            <h2 no-margin>What whould you like to order today?</h2>
+          </ion-col>
+          <ion-col col-3>
+            <button ion-button icon-only round style="background: #91c322;">
+              <ion-icon name="search"></ion-icon>
+            </button>            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <ion-item text-center no-lines [hidden]="!loader" style="margin-top:20%">
+    <ion-spinner icon="dots"></ion-spinner>
+  </ion-item>
+  <ion-item no-margin no-padding no-lines class="scroller" [hidden]="loader">
+    <ion-scroll scrollX="true" style="height:57px">
+      <div style="width:900px">
+        <button [ngClass]="{'active':button.active}" ion-button large clear 
+        color="secondary" *ngFor="let button of items;let i=index" 
+        (click)="getActiveCategory(i)">
+          {{button.name}}
+        </button>
+      </div>
+    </ion-scroll>
+  </ion-item>
+  <ion-list [hidden]="loader">
+    <ion-item text-wrap class="thumbnail" *ngFor="let product of prodcuts;let pIndex=index">
+      <ion-thumbnail item-start>
+        <img src={{product.image}}>
+      </ion-thumbnail>
+      <h2>{{product.name}}</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <ion-item no-lines no-margin no-padding>
+        <span item-start style="color:#91c322">
+          <ion-icon name="logo-usd" style="margin:0"></ion-icon>
+          <span style="font-size:18px">{{product.price}}</span>
+        </span>
+        <div item-end>
+          <button ion-button icon-only clear color="light" (click)="removeItem(pIndex)">
+            <ion-icon name="remove-circle"></ion-icon>
+          </button>
+          <button ion-button clear color="dark" style="font-size:14px">
+            {{product.quantity}}
+          </button>
+          <button ion-button icon-only clear (click)="addItem(pIndex)">
+            <ion-icon name="add-circle" style="color:#91c322"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+    </ion-item>
+  </ion-list>
+</ion-content>
